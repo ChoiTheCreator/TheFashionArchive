@@ -4,3 +4,7 @@
 
 https://github.com/ChoiTheCreator/Blog.git 
 이게 나의 원격저장소
+
+#2.
+git push -u는 내가 push를 한 곳을 기억하라라는 의미라서
+한번 git push -u 저장소주소 Main했으면 그대로 push해도 된다.
