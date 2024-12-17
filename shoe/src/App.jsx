@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+/*eslint-disable */
+import Shoedata from './data/Shoedata';
+import './App.css';
+import { useState } from 'react';
+import ShoeObjects from './Components/ShoeObjects';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  //따로 만든 Shoedata.jsx에서 가져온 객체배열임! (export + import 해서 state로 담음,) [{obj1, obj2 ,, 이 형태임}]
+  const [shoes, setShoes] = useState(Shoedata);
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="App">
+      {/* Navbar */}
+      <nav className="navbar">
+        <div className="navbar-container">
+          <h1 className="nav-title">My Blog</h1>
+          <ul className="nav-links">
+            <li>
+              <a href="#hero">Home</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#gallery">Gallery</a>
+            </li>
+            <li>
+              <a href="#posts">Posts</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section id="hero" className="hero">
+        <div className="hero-content">
+          <h1 className="hero-title">Welcome to My Blog</h1>
+          <p className="hero-subtitle">당신만의 멋진 이야기를 공유하세요.</p>
+        </div>
+      </section>
+
+      {/* 기존 상품 레이아웃 */}
+      <div className="container">
+        <div className="row">
+          <ShoeObjects shoes={shoes} idx={1}></ShoeObjects>
+          <ShoeObjects shoes={shoes} idx={2}></ShoeObjects>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
