@@ -1,0 +1,6 @@
+원격저장소 생성
+
+로컬 -> 원격저장소 업로드 
+
+https://github.com/ChoiTheCreator/Blog.git 
+이게 나의 원격저장소
