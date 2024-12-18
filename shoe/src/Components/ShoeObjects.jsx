@@ -6,7 +6,8 @@ const ShoeObjects = ({ shoes, idx }) => {
     <div>
       <div className="col-md-4">
         <img
-          src={'https://codingapple1.github.io/shop/shoes' + idx + '.jpg'}
+          //props idx라는 값으로 이미지 url 자체를 변수처럼 취급할수 있음
+          src={'https://codingapple1.github.io/shop/shoes' + (idx + 1) + '.jpg'}
           alt="상품 1"
         />
         <h4>{shoes[idx].title}</h4>
