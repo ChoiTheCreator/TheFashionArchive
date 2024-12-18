@@ -1,0 +1,91 @@
+/* ContactPage.css */
+.contact-container {
+  width: 100vw; /* 뷰포트 너비 */
+  height: 100vh; /* 뷰포트 높이 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    #6a5acd,
+    #1e90ff
+  ); /* 보라-파랑 그라데이션 */
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+.contact-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.contact-text {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-links {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-link {
+  list-style: none;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-link:hover {
+  background-color: #ffffff;
+  color: #1e90ff;
+}
+
+.instagram {
+  background-color: rgba(255, 0, 150, 0.8);
+}
+
+.github {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.tistory {
+  background-color: rgba(255, 165, 0, 0.8);
+}
+/* 공통 스타일 (이거 스타일 컴포넌트로 분리해야하나 .. 흠) */
+.button-group {
+  display: flex;
+  gap: 15px; /* 버튼 간격 */
+  justify-content: center; /* 버튼 중앙 정렬 */
+  margin-top: 20px; /* 버튼 그룹과 위 컨텐츠 간 간격 */
+}
+
+.about-link,
+.back-home-link {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #1e90ff;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.about-link:hover,
+.back-home-link:hover {
+  background-color: #ffffff;
+  color: #1e90ff;
+  border-color: #1e90ff;
+  transform: scale(1.05);
+}
