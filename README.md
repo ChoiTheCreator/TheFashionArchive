@@ -35,9 +35,9 @@ React와 Next.js를 사용하여 빠르고 유연한 사용자 경험을 제공�
 ### 1. 레포지토리 클론
 먼저, 레포지토리를 클론합니다:
 
-```bash
+
 git clone https://github.com/<your-username>/<your-repository-name>.git
-```bash
+
 
 ### 2. 의존성 설치
 
@@ -49,15 +49,13 @@ npm install
 
 ### 3. 개발 서버 실행
 
-
-```bash
 npm run dev
 
-###4. 애플리케이션 실행
+### 4. 애플리케이션 실행
 
 브라우저에서 http://localhost:3000을 열어 애플리케이션을 확인합니다.
 
-##프로젝트 구조
+## 프로젝트 구조
 📦 프로젝트 루트
 ├── 📁 components       # 재사용 가능한 UI 컴포넌트
 ├── 📁 pages            # Next.js의 페이지 구성 디렉토리
