@@ -37,12 +37,12 @@ React와 Next.js를 사용하여 빠르고 유연한 사용자 경험을 제공�
 
 ```bash
 git clone https://github.com/<your-username>/<your-repository-name>.git
-
+```bash
 
 ### 2. 의존성 설치
 
 프로젝트에 필요한 패키지를 설치합니다:
-```bash
+
 npm install
 
 
