@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Navbar from './Components/Navbar';
 import Hero from './Components/Hero';
 import ShoeList from './Components/ShoeList';
-import ShoeObjects from './Components/ShoeObjects';
+
 import { useNavigate, Outlet, Routes, Route } from 'react-router-dom';
 import NotFound from './Pages/NotFound';
 function App() {
