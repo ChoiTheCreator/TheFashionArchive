@@ -36,7 +36,7 @@ React와 Next.js를 사용하여 빠르고 유연한 사용자 경험을 제공�
 먼저, 레포지토리를 클론합니다:
 
 
-git clone https://github.com/<your-username>/<your-repository-name>.git
+git clone https://github.com/ChoiTheCreator/TheFashionArchive.git
 
 
 ### 2. 의존성 설치
