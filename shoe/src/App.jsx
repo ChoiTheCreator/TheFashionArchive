@@ -9,35 +9,9 @@ function App() {
   const [shoes, setShoes] = useState(Shoedata);
   return (
     <div className="App">
-      {/* Navbar */}
-      <nav className="navbar">
-        <div className="navbar-container">
-          <h1 className="nav-title">My Blog</h1>
-          <ul className="nav-links">
-            <li>
-              <a href="#hero">Home</a>
-            </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#gallery">Gallery</a>
-            </li>
-            <li>
-              <a href="#posts">Posts</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar></Navbar>
 
-      {/* Hero Section */}
-      <section id="hero" className="hero">
-        <div className="hero-content">
-          <h1 className="hero-title">Welcome to My Blog</h1>
-          <p className="hero-subtitle">당신만의 멋진 이야기를 공유하세요.</p>
-        </div>
-      </section>
-
+      <Hero></Hero>
       {/* 기존 상품 레이아웃 */}
       <div className="container">
         <div className="row">
