@@ -16,7 +16,7 @@ const Navbar = () => {
               <Link to={'/about'}>About</Link>
             </li>
             <li>
-              <a href="#gallery">Gallery</a>
+              <Link to={'/detail'}>Details</Link>
             </li>
             <li>
               <a href="#posts">Posts</a>

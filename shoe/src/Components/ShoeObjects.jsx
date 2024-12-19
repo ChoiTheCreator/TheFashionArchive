@@ -18,7 +18,6 @@ const ShoeObjects = ({ shoes, idx }) => {
           <h4 className="shoe-title">{shoes[idx].title}</h4>
           <p className="shoe-description">{shoes[idx].content}</p>
           <p className="shoe-price">{shoes[idx].price.toLocaleString()}원</p>
-          {/* Detail 버튼 */}
           <button
             className="detail-button"
             onClick={() => navigate(`/detail/${idx}`)}
