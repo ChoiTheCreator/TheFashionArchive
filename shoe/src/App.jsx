@@ -9,6 +9,8 @@ import ContactPage from './Pages/ContactPage';
 import { useNavigate, Outlet, Routes, Route } from 'react-router-dom';
 import NotFound from './Pages/NotFound';
 import AboutPage from './Pages/AboutPage';
+import ShoeObjects from './Components/ShoeObjects';
+import ShoeDetail from './Pages/ShowDetail';
 function App() {
   //따로 만든 Shoedata.jsx에서 가져온 객체배열임! (export + import 해서 state로 담음,) [{obj1, obj2 ,, 이 형태임}]
   const [shoes, setShoes] = useState(Shoedata);
@@ -34,6 +36,16 @@ function App() {
         <Route path="/about" element={<AboutPage></AboutPage>}></Route>
         <Route path="/contact" element={<ContactPage></ContactPage>}></Route>
 
+        {/* 신발 디테일 페이지 : use URL 파라미터 
+        하나의 컴포넌트로 각각 다른 상황에서 다른 내용보여주게
+        props를 쓰던가 라우터적으로도 해결가능*/}
+        <Route path="/detail" element={<ShoeList shoes={shoes}></ShoeList>}>
+          {/* 여기서 url 파라미터로 중첩라우팅을 섞는다 */}
+          <Route
+            path=":id"
+            element={<ShoeDetail shoes={shoes}></ShoeDetail>}
+          ></Route>
+        </Route>
         {/* 404 페이지 */}
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>

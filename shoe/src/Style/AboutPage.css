@@ -1,35 +1,39 @@
 /* AboutPage.css */
+
+/* 전체 레이아웃 */
 .about-container {
-  width: 100vw; /* 뷰포트 너비 100% */
-  height: 100vh; /* 뷰포트 높이 100% */
+  width: 100vw; /* 뷰포트 너비 */
+  height: 100vh; /* 뷰포트 높이 */
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(
     135deg,
-    #6a5acd,
-    #1e90ff
-  ); /* 보라색에서 파란색으로 그라데이션 */
+    #7f7fd5,
+    #86a8e7,
+    #91eae4
+  ); /* 부드러운 그라데이션 */
   color: #333;
   font-family: 'Arial', sans-serif;
   padding: 20px;
   box-sizing: border-box;
 }
 
+/* 메인 콘텐츠 */
 .about-content {
   max-width: 800px;
   text-align: center;
   background: white;
   padding: 40px;
   border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* 더 부드럽고 강렬한 그림자 */
 }
 
 .about-title {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #1e90ff; /* 파란색 강조 */
+  color: #0056b3; /* 파란색 강조 */
 }
 
 .about-text {
@@ -39,6 +43,7 @@
   color: #555;
 }
 
+/* 반응형 디자인 */
 @media (max-width: 768px) {
   .about-title {
     font-size: 2.5rem;
@@ -48,32 +53,16 @@
     font-size: 1rem;
   }
 }
-.about-link {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1.2rem;
-  color: #ffffff;
-  background-color: #1e90ff;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s, transform 0.2s;
-}
 
-.about-link:hover {
-  background-color: #6a5acd;
-  transform: scale(1.05);
-}
-/* 공통 스타일 */
+/* 공통 버튼 스타일 */
 .button-group {
   display: flex;
   gap: 15px; /* 버튼 간격 */
   justify-content: center; /* 버튼 중앙 정렬 */
-  margin-top: 20px; /* 버튼 그룹과 위 컨텐츠 간 간격 */
+  margin-top: 20px;
 }
 
-.about-link,
-.back-home-link {
+.shared-button {
   display: inline-block;
   padding: 10px 20px;
   font-size: 1.2rem;
@@ -82,11 +71,10 @@
   text-decoration: none;
   border-radius: 8px;
   border: 2px solid transparent;
-  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-.about-link:hover,
-.back-home-link:hover {
+.shared-button:hover {
   background-color: #ffffff;
   color: #1e90ff;
   border-color: #1e90ff;

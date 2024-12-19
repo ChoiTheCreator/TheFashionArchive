@@ -1,0 +1,68 @@
+/* ShoeObject.css */
+
+/* 상품 카드 기본 스타일 */
+.col-md-4 {
+  flex: 1;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.col-md-4:hover {
+  transform: translateY(-10px);
+}
+
+.shoe-image {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+}
+
+/* 정보 섹션 스타일 */
+.shoe-info {
+  margin-top: 15px;
+}
+
+.shoe-title {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.shoe-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.shoe-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e74c3c;
+  margin-bottom: 15px;
+}
+
+/* 버튼 스타일 */
+.detail-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.detail-button:hover {
+  background-color: #0056b3;
+}
+
+.detail-button:active {
+  transform: scale(0.95);
+}
