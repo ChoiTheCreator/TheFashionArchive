@@ -44,3 +44,38 @@
 .detail-button:hover {
   background-color: #0056b3;
 }
+.event-box {
+  position: fixed; /* 항상 화면에 고정 */
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffefc1; /* 부드러운 노란색 배경 */
+  color: #333; /* 어두운 텍스트 */
+  padding: 15px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  font-weight: bold;
+  z-index: 1000; /* 항상 위에 표시 */
+  animation: fade-in-out 2s ease-in-out forwards; /* 등장 후 사라짐 애니메이션 */
+}
+
+/* 등장 후 사라지는 애니메이션 */
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+}
