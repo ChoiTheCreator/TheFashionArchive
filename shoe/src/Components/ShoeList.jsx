@@ -1,7 +1,6 @@
 /*eslint-disable */
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import '../Style/ShoeList.css';
 
 const ShoeList = ({ shoes }) => {
   let [eventBox, setEventBox] = useState(true);

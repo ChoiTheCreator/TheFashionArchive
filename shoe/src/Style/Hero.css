@@ -3,12 +3,12 @@
   margin-top: 0;
   padding-top: 70px; /* Navbar 높이만큼 여백 추가 */
   background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0')
-    no-repeat center center/cover;
+    no-repeat center center/cover; /* 배경 이미지 중앙 정렬 및 커버 */
   height: 500px;
-  width: 100%; /* 뷰포트 전체를 채움 */
+  width: 100%; /* 부모 요소에 맞춰 너비 설정 */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
   color: white;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
   box-sizing: border-box;
@@ -16,16 +16,21 @@
 }
 
 .hero-content {
-  text-align: center;
-  padding: 0 20px; /* 양쪽 여백 추가로 텍스트 정렬 */
+  width: 90%; /* 내부 콘텐츠의 너비를 화면의 90%로 설정 */
+  max-width: 1200px; /* 최대 너비 제한 */
+  margin: 0 auto; /* 좌우 중앙 정렬 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  padding: 0 20px; /* 좌우 여백 추가 */
 }
 
 .hero-title {
-  font-size: 4rem;
+  font-size: 4rem; /* 큰 텍스트 크기 */
   margin: 0 0 10px;
+  line-height: 1.2; /* 텍스트 간격 조정 */
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
   margin: 0;
+  line-height: 1.5; /* 더 읽기 쉬운 텍스트 간격 */
 }
