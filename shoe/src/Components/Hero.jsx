@@ -1,15 +1,47 @@
 import React from 'react';
-
+import '../Style/Hero.css';
 const Hero = () => {
   return (
-    <div>
-      {/* Hero Section */}
-      <section id="hero" className="hero">
-        <div className="hero-content">
-          <h1 className="hero-title">Welcome to My Blog</h1>
-          <p className="hero-subtitle">당신만의 멋진 이야기를 공유하세요.</p>
-        </div>
-      </section>
+    <div
+      style={{
+        width: '100vw',
+        height: '50vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        background: '#f5f5f5',
+        borderBottom: '2px solid #ddd',
+        padding: '20px',
+        boxSizing: 'border-box',
+        fontFamily: "'Playfair Display', serif",
+      }}
+    >
+      <div
+        style={{
+          textAlign: 'center',
+        }}
+      >
+        <h1
+          style={{
+            fontSize: '2.5rem',
+            fontWeight: 'bold',
+            color: '#333',
+            marginBottom: '10px',
+            fontFamily: "'Playfair Display', serif",
+          }}
+        >
+          Your Stylish Shoe Collection
+        </h1>
+        <p
+          style={{
+            fontSize: '1.2rem',
+            color: '#666',
+            fontFamily: "'Roboto', sans-serif",
+          }}
+        >
+          Elevate your style with our curated selection of shoes.
+        </p>
+      </div>
     </div>
   );
 };

@@ -10,11 +10,35 @@ import { Routes, Route } from 'react-router-dom';
 import NotFound from './Pages/NotFound';
 import AboutPage from './Pages/AboutPage';
 import ShoeDetail from './Components/ShoeDetail';
+import ErrorMessage from './Style/Components/ErrorMessage';
 import axios from 'axios';
 function App() {
-  const url = 'https://codingapple1.github.io/shop/data2.json';
   const [shoes, setShoes] = useState(Shoedata);
+  const [clickCnt, setClickCnt] = useState(2);
+  const [noMoreItem, setNoMoreItem] = useState(false);
+  const url = `https://codingapple1.github.io/shop/data${clickCnt}.json`;
+  const fetchData = () => {
+    setClickCnt((prevClickCnt) => {
+      const nextClickCnt = prevClickCnt + 1;
 
+      if (nextClickCnt > 4) {
+        console.log('더이상 아이템 없음 ㅅㄱ');
+        setNoMoreItem(true);
+        setTimeout(() => setNoMoreItem(false), 2000); // 2초 후 메시지 숨기기
+        return prevClickCnt; // 상태를 변경하지 않음
+      }
+
+      axios
+        .get(url)
+        .then((result) => {
+          const copy = [...shoes, ...result.data];
+          setShoes(copy); // 신발 상태 업데이트
+        })
+        .catch((error) => console.log(error));
+
+      return nextClickCnt; // 상태를 업데이트
+    });
+  };
   return (
     <div className="App">
       <Navbar />
@@ -26,6 +50,9 @@ function App() {
             <div className="container">
               <Hero />
               <ShoeList shoes={shoes} />
+              {noMoreItem && (
+                <ErrorMessage>더 이상 가져올 신발이 없습니다!</ErrorMessage>
+              )}
               <button
                 style={{
                   backgroundColor: 'blue',
@@ -35,14 +62,9 @@ function App() {
                   borderRadius: '5px',
                   cursor: 'pointer',
                 }}
-                onClick={() => {
-                  axios.get(url).then((result) => {
-                    const copy = [...shoes, ...result.data];
-                    setShoes(copy);
-                  });
-                }}
+                onClick={fetchData}
               >
-                버튼아아아아아아임
+                가져오기
               </button>
             </div>
           }

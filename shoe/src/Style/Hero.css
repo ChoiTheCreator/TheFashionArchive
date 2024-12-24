@@ -1,0 +1,31 @@
+/* Hero Section */
+.hero {
+  margin-top: 0;
+  padding-top: 70px; /* Navbar 높이만큼 여백 추가 */
+  background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0')
+    no-repeat center center/cover;
+  height: 500px;
+  width: 100%; /* 뷰포트 전체를 채움 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+  overflow: hidden; /* 불필요한 스크롤 방지 */
+}
+
+.hero-content {
+  text-align: center;
+  padding: 0 20px; /* 양쪽 여백 추가로 텍스트 정렬 */
+}
+
+.hero-title {
+  font-size: 4rem;
+  margin: 0 0 10px;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin: 0;
+}

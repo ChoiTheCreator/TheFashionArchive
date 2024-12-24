@@ -1,0 +1,92 @@
+/* Navbar 전체 스타일 */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white; /* 흰색 배경 */
+  border-bottom: 1px solid #ddd; /* 구분선 */
+  z-index: 1000;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05); /* 부드러운 그림자 */
+  transition: background-color 0.3s ease;
+  height: 60px; /* 더 얇은 높이 */
+}
+
+/* Navbar 내부 컨테이너 */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0; /* 여백 제거 */
+  box-sizing: border-box;
+  height: 100%; /* 부모 높이 채우기 */
+}
+
+/* Navbar 로고 */
+.nav-title {
+  font-size: 1.5rem; /* 로고 크기 조정 */
+  font-weight: bold;
+  color: #333; /* 기본 텍스트 색상 */
+  text-decoration: none;
+}
+
+.nav-title:hover {
+  color: #007bff; /* 로고에 호버 효과 추가 */
+}
+
+/* Navbar 링크 */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px; /* 간격 조정 */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #555; /* 중립적인 색상 */
+  text-decoration: none;
+  font-size: 0.9rem; /* 글꼴 크기 줄임 */
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+  color: white;
+  background-color: #007bff; /* 호버 시 버튼 효과 */
+}
+
+/* 모바일 반응형 */
+.hamburger-menu {
+  display: none; /* 기본적으로 숨김 */
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: none; /* 기본적으로 숨김 */
+  }
+
+  .nav-links.open {
+    display: flex; /* 토글 시 표시 */
+  }
+
+  .hamburger-menu {
+    display: block; /* 모바일에서 햄버거 메뉴 표시 */
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
