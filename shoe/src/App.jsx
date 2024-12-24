@@ -10,8 +10,9 @@ import { Routes, Route } from 'react-router-dom';
 import NotFound from './Pages/NotFound';
 import AboutPage from './Pages/AboutPage';
 import ShoeDetail from './Components/ShoeDetail';
-
+import axios from 'axios';
 function App() {
+  const url = 'https://codingapple1.github.io/shop/data2.json';
   const [shoes, setShoes] = useState(Shoedata);
 
   return (
@@ -25,6 +26,24 @@ function App() {
             <div className="container">
               <Hero />
               <ShoeList shoes={shoes} />
+              <button
+                style={{
+                  backgroundColor: 'blue',
+                  color: 'white',
+                  padding: '10px 20px',
+                  border: 'none',
+                  borderRadius: '5px',
+                  cursor: 'pointer',
+                }}
+                onClick={() => {
+                  axios.get(url).then((result) => {
+                    const copy = [...shoes, ...result.data];
+                    setShoes(copy);
+                  });
+                }}
+              >
+                버튼아아아아아아임
+              </button>
             </div>
           }
         />
