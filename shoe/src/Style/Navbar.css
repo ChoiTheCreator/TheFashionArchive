@@ -76,4 +76,31 @@
     padding: 10px 15px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    display: none; /* 기본적으로 숨김
+    display: none;
+  }
+}
+
+/* 애니메이션 시작 시 클래스 */
+.navbar.animate {
+  animation: navbar-slide-down 0.5s ease-out, navbar-color-change 0.5s ease-out;
+}
+
+/* Navbar가 아래로 슬라이드 */
+@keyframes navbar-slide-down {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Navbar 배경색 변경 */
+@keyframes navbar-color-change {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: #007bff; /* 원하는 색상 */
+  }
+}

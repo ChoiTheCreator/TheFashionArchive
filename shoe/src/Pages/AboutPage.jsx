@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Style/AboutPage.css'; // 스타일 파일을 별도로 관리
 import { Link } from 'react-router-dom';
 
