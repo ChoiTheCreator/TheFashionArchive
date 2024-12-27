@@ -7,9 +7,11 @@ import Hero from './Components/Hero';
 import ShoeList from './Components/ShoeList';
 import ContactPage from './Pages/ContactPage';
 import { Routes, Route } from 'react-router-dom';
+
 import NotFound from './Pages/NotFound';
 import AboutPage from './Pages/AboutPage';
 import ShoeDetail from './Components/ShoeDetail';
+import CartPage from './Pages/CartPage';
 import ErrorMessage from './Style/Components/ErrorMessage';
 import axios from 'axios';
 function App() {
@@ -80,6 +82,8 @@ function App() {
         {/* About 및 Contact 페이지 */}
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
+
+        <Route path="/cart" element={<CartPage></CartPage>}></Route>
 
         {/* 404 페이지 */}
         <Route path="*" element={<NotFound />} />

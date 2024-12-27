@@ -1,0 +1,72 @@
+/* Cart Container */
+.cart-container {
+  width: 100vw; /* 뷰포트 너비 최대 */
+  margin: 0 auto;
+  padding: 10px 20px 20px 20px; /* 상단 여백 최소화 */
+  box-sizing: border-box;
+  background-color: #f8f9fa;
+}
+
+/* Cart Table Styling */
+.cart-table {
+  width: 100%; /* 테이블 너비 최대 */
+  margin: 0; /* Navbar 바로 아래 붙게 설정 */
+  background-color: #ffffff;
+  border-collapse: collapse;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 12px;
+  border: 1px solid #dee2e6;
+}
+
+.cart-table thead th {
+  background-color: #343a40;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.cart-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.cart-table tbody tr:hover {
+  background-color: #e9ecef;
+  cursor: pointer;
+}
+
+/* Edit Button */
+.edit-btn {
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.edit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .cart-table th,
+  .cart-table td {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .edit-btn {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+}

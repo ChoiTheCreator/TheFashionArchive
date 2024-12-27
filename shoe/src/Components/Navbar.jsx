@@ -18,7 +18,9 @@ const Navbar = () => {
     <nav className={`navbar ${isAnimating ? 'animate' : ''}`}>
       <div className="navbar-container">
         <h1 className="nav-title">
-          <Link to="/">Collections</Link>
+          <Link className="nav-title" to="/">
+            Collections
+          </Link>
         </h1>
         <ul className="nav-links">
           <li>
