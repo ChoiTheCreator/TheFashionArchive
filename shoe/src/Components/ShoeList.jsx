@@ -23,7 +23,7 @@ const ShoeList = ({ shoes }) => {
         shoes.map((shoe) => (
           <div key={shoe.id} className="shoe-item">
             <img
-              className="shoe-image"
+              className="shoe-image "
               src={`https://codingapple1.github.io/shop/shoes${
                 shoe.id + 1
               }.jpg`}

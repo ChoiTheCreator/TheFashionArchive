@@ -19,6 +19,7 @@ function App() {
   const [clickCnt, setClickCnt] = useState(2);
   const [noMoreItem, setNoMoreItem] = useState(false);
   const url = `https://codingapple1.github.io/shop/data${clickCnt}.json`;
+
   const fetchData = () => {
     setClickCnt((prevClickCnt) => {
       const nextClickCnt = prevClickCnt + 1;

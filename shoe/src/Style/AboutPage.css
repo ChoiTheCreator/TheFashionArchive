@@ -81,21 +81,3 @@
   transform: scale(1.05);
 }
 
-@keyframes navbar-slide-down {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-/* Navbar 배경색 변경 */
-@keyframes navbar-color-change {
-  0% {
-    background-color: white;
-  }
-  100% {
-    background-color: #007bff; /* 원하는 색상 */
-  }
-}

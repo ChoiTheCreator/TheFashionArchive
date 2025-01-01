@@ -1,33 +1,43 @@
+/*eslint-disable */
 import React from 'react';
+
 import '../Style/CartPage.css'; // CSS 파일 임포트
 import { Table } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { increaseCount } from '../Store/store';
 
 const CartPage = () => {
-  const cartItems = [
-    { id: 1, name: '상품 A', quantity: 2 },
-    { id: 2, name: '상품 B', quantity: 1 },
-    { id: 3, name: '상품 C', quantity: 3 },
-  ];
+  const userData = useSelector((state) => state.stock);
+  console.log(userData);
+
+  let dispatch = useDispatch();
+  const userCart = useSelector((globalState) => globalState.userCart);
+  console.log(userCart);
 
   return (
-    <div className="cart-container">
+    <div className="cart-container ">
       <Table striped bordered hover className="cart-table">
         <thead>
           <tr>
             <th>#</th>
-            <th>상품명</th>
-            <th>수량</th>
-            <th>변경하기</th>
+            <th>Product ID</th>
+            <th>Quantity</th>
+            <th>Count</th>
           </tr>
         </thead>
         <tbody>
-          {cartItems.map((item, index) => (
+          {userCart.map((item, idx) => (
             <tr key={item.id}>
-              <td>{index + 1}</td>
+              <td>{item.id}</td>
               <td>{item.name}</td>
-              <td>{item.quantity}</td>
+              <td>{item.count}</td>
               <td>
-                <button className="edit-btn">수정</button>
+                <button
+                  className="edit-btn"
+                  onClick={dispatch(increaseCount(item.id))}
+                >
+                  수량 추가
+                </button>
               </td>
             </tr>
           ))}
