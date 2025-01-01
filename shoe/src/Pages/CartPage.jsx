@@ -1,6 +1,4 @@
-/*eslint-disable */
 import React from 'react';
-
 import '../Style/CartPage.css'; // CSS 파일 임포트
 import { Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
@@ -26,7 +24,7 @@ const CartPage = () => {
           </tr>
         </thead>
         <tbody>
-          {userCart.map((item, idx) => (
+          {userCart.map((item) => (
             <tr key={item.id}>
               <td>{item.id}</td>
               <td>{item.name}</td>
@@ -34,7 +32,7 @@ const CartPage = () => {
               <td>
                 <button
                   className="edit-btn"
-                  onClick={dispatch(increaseCount(item.id))}
+                  onClick={() => dispatch(increaseCount(item.id))} // 함수로 감싸기
                 >
                   수량 추가
                 </button>
