@@ -1,6 +1,6 @@
 import Shoedata from './data/Shoedata';
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from './Components/Navbar';
 import Hero from './Components/Hero';
 import ShoeList from './Components/ShoeList';
@@ -17,9 +17,22 @@ function App() {
   const [shoes, setShoes] = useState(Shoedata);
   const [clickCnt, setClickCnt] = useState(2);
   const [noMoreItem, setNoMoreItem] = useState(false);
+  const [pressedShoes, setPressesdShoes] = useState([]);
 
   const url = `https://codingapple1.github.io/shop/data${clickCnt}.json`;
+  //처음 접근시, 로컬 스토리지에 array 자료 하나 생성 (app.jsx에서는 로컬스토리지 세팅만 담당하여 책임을 분리한다.)
+  //그러나 , 이건 리렌더링 할 시 []가 초기화 되기에, 데이터가 저장이 안될 가능성이 있다.
+  useEffect(() => {
+    //pressed라는 key를 이용해, 로컬스트로지에 데이터를 저장한다. 먼저 fetching 하고 없을때만
+    //빈 배열을 주게 코드를 다시 짠다면 (반영구적 로컬스토리지 복원을 위하여)
+    const saveShoes = JSON.parse(localStorage.getItem('pressed')) || [];
+    setPressesdShoes(saveShoes);
+  }, []);
 
+  //사용자가 신발을 클릭하면, 해당 shoe.id가 로컬스토로지에 저장되는 로직
+  const postClickedShoe = (shoe) => {
+    localStorage.setItem(shoe.id);
+  };
   const fetchData = () => {
     setClickCnt((prevClickCnt) => {
       const nextClickCnt = prevClickCnt + 1;
@@ -52,7 +65,7 @@ function App() {
           element={
             <div className="container">
               <Hero />
-              <ShoeList shoes={shoes} />
+              <ShoeList shoes={shoes} postClikedShoe={postClickedShoe} />
               {noMoreItem && (
                 <ErrorMessage>더 이상 가져올 신발이 없습니다!</ErrorMessage>
               )}
