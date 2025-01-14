@@ -1,4 +1,3 @@
-/*eslint-disable */
 import Shoedata from './data/Shoedata';
 import './App.css';
 import { useState } from 'react';
@@ -6,18 +5,19 @@ import Navbar from './Components/Navbar';
 import Hero from './Components/Hero';
 import ShoeList from './Components/ShoeList';
 import ContactPage from './Pages/ContactPage';
-import { Routes, Route } from 'react-router-dom';
-
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import NotFound from './Pages/NotFound';
 import AboutPage from './Pages/AboutPage';
 import ShoeDetail from './Components/ShoeDetail';
 import CartPage from './Pages/CartPage';
 import ErrorMessage from './Style/Components/ErrorMessage';
 import axios from 'axios';
+
 function App() {
   const [shoes, setShoes] = useState(Shoedata);
   const [clickCnt, setClickCnt] = useState(2);
   const [noMoreItem, setNoMoreItem] = useState(false);
+
   const url = `https://codingapple1.github.io/shop/data${clickCnt}.json`;
 
   const fetchData = () => {
@@ -27,26 +27,26 @@ function App() {
       if (nextClickCnt > 4) {
         console.log('더이상 아이템 없음 ㅅㄱ');
         setNoMoreItem(true);
-        setTimeout(() => setNoMoreItem(false), 2000); // 2초 후 메시지 숨기기
-        return prevClickCnt; // 상태를 변경하지 않음
+        setTimeout(() => setNoMoreItem(false), 2000);
+        return prevClickCnt;
       }
 
       axios
         .get(url)
         .then((result) => {
           const copy = [...shoes, ...result.data];
-          setShoes(copy); // 신발 상태 업데이트
+          setShoes(copy);
         })
         .catch((error) => console.log(error));
 
-      return nextClickCnt; // 상태를 업데이트
+      return nextClickCnt;
     });
   };
+
   return (
     <div className="App">
       <Navbar />
       <Routes>
-        {/* 메인 페이지 */}
         <Route
           path="/"
           element={
@@ -72,21 +72,11 @@ function App() {
             </div>
           }
         />
-
-        <Route
-          path="/detail"
-          element={<ShoeList shoes={shoes}></ShoeList>}
-        ></Route>
-        {/* 상세 페이지 */}
         <Route path="/detail/:id" element={<ShoeDetail shoes={shoes} />} />
-
-        {/* About 및 Contact 페이지 */}
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
 
-        <Route path="/cart" element={<CartPage></CartPage>}></Route>
-
-        {/* 404 페이지 */}
+        <Route path="/cart" element={<CartPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

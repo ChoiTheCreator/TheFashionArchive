@@ -1,3 +1,5 @@
+/*eslint-disable */
+
 import React from 'react';
 import '../Style/CartPage.css'; // CSS 파일 임포트
 import { Table } from 'react-bootstrap';

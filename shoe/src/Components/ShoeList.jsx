@@ -21,9 +21,14 @@ const ShoeList = ({ shoes }) => {
       {/* 신발 목록 */}
       {shoes && shoes.length > 0 ? (
         shoes.map((shoe) => (
-          <div key={shoe.id} className="shoe-item">
+          <div
+            key={shoe.id}
+            className="shoe-item"
+            onClick={() => navigate(`/detail/${shoe.id}`)}
+            style={{ cursor: 'pointer' }}
+          >
             <img
-              className="shoe-image "
+              className="shoe-image"
               src={`https://codingapple1.github.io/shop/shoes${
                 shoe.id + 1
               }.jpg`}
@@ -33,16 +38,15 @@ const ShoeList = ({ shoes }) => {
             <p className="shoe-content">{shoe.content}</p>
             <p className="shoe-price">{shoe.price.toLocaleString()}원</p>
 
-            {/* Detail 버튼 */}
-            {(location.pathname === '/detail' ||
-              location.pathname.startsWith('/detail/')) && (
-              <button
-                className="detail-button"
-                onClick={() => navigate(`/detail/${shoe.id}`)}
-              >
-                View Detail
-              </button>
-            )}
+            {/* Detail 버튼 - 내부 클릭 시 이벤트 전파 막기 */}
+            <button
+              className="detail-button"
+              onClick={(e) => {
+                navigate(`/detail/${shoe.id}`);
+              }}
+            >
+              View Detail
+            </button>
           </div>
         ))
       ) : (
