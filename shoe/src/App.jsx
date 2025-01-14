@@ -10,6 +10,7 @@ import NotFound from './Pages/NotFound';
 import AboutPage from './Pages/AboutPage';
 import ShoeDetail from './Components/ShoeDetail';
 import CartPage from './Pages/CartPage';
+import RecentlyShownPage from './Pages/RecentlyShownPage';
 import ErrorMessage from './Style/Components/ErrorMessage';
 import axios from 'axios';
 
@@ -88,6 +89,10 @@ function App() {
         <Route path="/detail/:id" element={<ShoeDetail shoes={shoes} />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route
+          path="/recently"
+          element={<RecentlyShownPage shoes={shoes} />}
+        ></Route>
 
         <Route path="/cart" element={<CartPage />} />
         <Route path="*" element={<NotFound />} />
