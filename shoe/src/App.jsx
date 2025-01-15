@@ -26,7 +26,7 @@ const fetchShoesData = async (clickCnt) => {
 const queryClient = new QueryClient(); // 추가
 
 function App() {
-  const [clickCnt, setClickCnt] = useState(2);
+  const [clickCnt, setClickCnt] = useState(3);
   const [pressedShoes, setPressedShoes] = useState([]);
 
   const {
